@@ -1,0 +1,95 @@
+ENTIDADES
+
+LOGIN:{
+    Email
+
+    USUARIO: {}[],
+    CONTA: {}[],
+    CATEGORIA: {}[],
+    CATEGORIA_MOVIMENTACAO: {}[],
+    MAQUININHA: {}[]
+}
+
+USUARIO: {
+    Login_Id,
+    Nome,
+    Email,
+    Senha
+}
+
+CONTA: {
+    Login_Id,
+    Categoria_Id,
+    Cartao_Id,
+    Perfil, (SETOR, PESSOA)
+    Nome,
+    IMG,
+    Vencimento,
+    Status (ATIVO, EXCLUIDO)
+
+    MOVIMENTACAO: {}[]
+}
+
+CATEGORIA:{
+    Login_Id,
+    Nome,
+    Limite, (DECIMAL(10,2))
+    Acumulativo (BOOLEAN)
+}
+
+CARTAO: {
+    ID (CHAVE_KEY)
+
+    CONTA: {}
+    MOVIMENTACAO: {}[]
+}
+
+MOVIMENTACAO: {
+    Conta_Id,
+    Categoria_Movimentacao_Id,
+    Tipo, (ENTRADA ou SAIDA)
+    Data,
+    Valor
+}
+
+CATEGORIA_MOVIMENTACAO: {
+    Login_Id,
+    Nome
+}
+
+MAQUININHA: {
+    Login_Id,
+    Categoria_Movimentacao_Id,
+    Identificador
+}
+
+LOG_MOVIMENTACAO: {
+    Movimentacao_Id,
+    Evento,
+    Status,
+    Descricao
+}
+
+CONFIG_REFEICOES: {
+    Login_Id,
+    Preco_Desjejum,
+    Preco_Almoco, 
+    Preco_Jantar
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
